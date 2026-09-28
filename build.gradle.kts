@@ -95,6 +95,7 @@ val compatibleMcVersion = VersionDefinition(
     "26.1.2" to VersionRange("26.1", "26.1.2", exclusiveUpperBound = "26.2", name = "26.1"),
     "26.2" to VersionRange("26.2", "26.2", exclusiveUpperBound = "26.3", name = "26.2"),
     "26.3" to VersionRange("26.3", "26.3", exclusiveUpperBound = "26.4", name = "26.3", allowReleaseCandidate = true),
+    "26.3" to VersionRange("26.3", "26.4", allowAll = true),
 )
 val javaVersion = VersionDefinition(
     "1.20.1" to "17",
@@ -347,6 +348,7 @@ tasks {
             "aw" to accessWidener,
             "mixinPath" to mixinPath,
             "mcVersion" to compatibleMcVersion.get(mcPlatform).getLoaderRange(mcPlatform),
+            "mcVersion" to ">=26.3",
             "minNeoForgeVersion" to minimumNeoForgeVersion.get(mcPlatform),
             "breaks" to if (mcPlatform.version < 260200) """,
   "breaks": {
